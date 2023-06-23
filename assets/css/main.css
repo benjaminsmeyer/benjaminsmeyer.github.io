@@ -96,8 +96,8 @@ a:focus
 {
     cursor: pointer;
     -webkit-transition: all 300ms ease;
-         -o-transition: all 300ms ease;
-            transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    transition: all 300ms ease;
     text-decoration: none;
 }
 
@@ -159,10 +159,10 @@ a:hover
 .preloader.preloader-hidden
 {
     height: 0;
-    
+
     -webkit-transition: .5s ease .3s;
-         -o-transition: .5s ease .3s;
-            transition: .5s ease .3s;
+    -o-transition: .5s ease .3s;
+    transition: .5s ease .3s;
 }
 
 .preloader .spinner
@@ -173,8 +173,8 @@ a:hover
     width: 100%;
 
     -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-            transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
     text-align: center;
     opacity: 1;
 }
@@ -182,10 +182,10 @@ a:hover
 .preloader.preloader-hidden .spinner
 {
     opacity: 0;
-    
+
     -webkit-transition: .3s ease;
-         -o-transition: .3s ease;
-            transition: .3s ease;
+    -o-transition: .3s ease;
+    transition: .3s ease;
 }
 
 .preloader .spinner > div
@@ -197,7 +197,7 @@ a:hover
     margin: 0 6px;
 
     -webkit-animation: spinner-bounce 1.4s infinite ease-in-out both;
-            animation: spinner-bounce 1.4s infinite ease-in-out both;
+    animation: spinner-bounce 1.4s infinite ease-in-out both;
 
     border-radius: 100%;
     background-color: #fff;
@@ -206,13 +206,13 @@ a:hover
 .preloader .spinner .bounce-1
 {
     -webkit-animation-delay: -.32s;
-            animation-delay: -.32s;
+    animation-delay: -.32s;
 }
 
 .preloader .spinner .bounce-2
 {
     -webkit-animation-delay: -.16s;
-            animation-delay: -.16s;
+    animation-delay: -.16s;
 }
 
 @-webkit-keyframes spinner-bounce
@@ -236,13 +236,13 @@ a:hover
     100%
     {
         -webkit-transform: scale(0);
-                transform: scale(0);
+        transform: scale(0);
     }
 
     40%
     {
         -webkit-transform: scale(1.0);
-                transform: scale(1.0);
+        transform: scale(1.0);
     }
 }
 
@@ -265,8 +265,8 @@ a:hover
 .hero .animation-container
 {
     -webkit-transition: .5s ease;
-         -o-transition: .5s ease;
-            transition: .5s ease;
+    -o-transition: .5s ease;
+    transition: .5s ease;
 }
 
 .hero .animation-container.animation-fade
@@ -282,8 +282,8 @@ a:hover
 .hero .animation-container.animation-fade-up
 {
     -webkit-transform: translateY(10vh);
-        -ms-transform: translateY(10vh);
-            transform: translateY(10vh);
+    -ms-transform: translateY(10vh);
+    transform: translateY(10vh);
 
     opacity: 0;
 }
@@ -291,8 +291,8 @@ a:hover
 .hero .animation-container.animation-fade-up.run-animation
 {
     -webkit-transform: translateY(0);
-        -ms-transform: translateY(0);
-            transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
 
     opacity: 1;
 }
@@ -300,8 +300,8 @@ a:hover
 .hero .animation-container.animation-fade-down
 {
     -webkit-transform: translateY(-10vh);
-        -ms-transform: translateY(-10vh);
-            transform: translateY(-10vh);
+    -ms-transform: translateY(-10vh);
+    transform: translateY(-10vh);
 
     opacity: 0;
 }
@@ -309,8 +309,8 @@ a:hover
 .hero .animation-container.animation-fade-down.run-animation
 {
     -webkit-transform: translateY(0);
-        -ms-transform: translateY(0);
-            transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
 
     opacity: 1;
 }
@@ -318,8 +318,8 @@ a:hover
 .hero .animation-container.animation-fade-left
 {
     -webkit-transform: translateX(10vh);
-        -ms-transform: translateX(10vh);
-            transform: translateX(10vh);
+    -ms-transform: translateX(10vh);
+    transform: translateX(10vh);
 
     opacity: 0;
 }
@@ -327,8 +327,8 @@ a:hover
 .hero .animation-container.animation-fade-left.run-animation
 {
     -webkit-transform: translateX(0);
-        -ms-transform: translateX(0);
-            transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
 
     opacity: 1;
 }
@@ -336,8 +336,8 @@ a:hover
 .hero .animation-container.animation-fade-right
 {
     -webkit-transform: translateX(-10vh);
-        -ms-transform: translateX(-10vh);
-            transform: translateX(-10vh);
+    -ms-transform: translateX(-10vh);
+    transform: translateX(-10vh);
 
     opacity: 0;
 }
@@ -345,8 +345,8 @@ a:hover
 .hero .animation-container.animation-fade-right.run-animation
 {
     -webkit-transform: translateX(0);
-        -ms-transform: translateX(0);
-            transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
 
     opacity: 1;
 }
@@ -376,8 +376,8 @@ a:hover
     width: 100%;
 
     -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-            transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
     text-align: center;
 }
 
@@ -401,10 +401,10 @@ a:hover
 
 .hero .front-content .container-mid p.subline
 {
-    font-size: 2rem;
+    font-size: 3rem;
     line-height: 1.4em;
 
-    max-width: 18em;
+    max-width: 30em;
     margin-right: auto;
     margin-bottom: 1.3em;
     margin-left: auto;
@@ -427,8 +427,8 @@ a:hover
 
     cursor: pointer;
     -webkit-transition: all .1s linear;
-         -o-transition: all .1s linear;
-            transition: all .1s linear;
+    -o-transition: all .1s linear;
+    transition: all .1s linear;
     letter-spacing: .025em;
 
     color: #fff;
@@ -502,7 +502,7 @@ a:hover
     height: 110%;
 
     -webkit-transform: translate3d(-50%, -50%, 0px) !important;
-            transform: translate3d(-50%, -50%, 0px) !important;
+    transform: translate3d(-50%, -50%, 0px) !important;
 }
 
 .hero .background-content .background-overlay
@@ -551,8 +551,8 @@ a:hover
     height: 100%;
 
     -webkit-transition: .3s ease;
-         -o-transition: .3s ease;
-            transition: .3s ease;
+    -o-transition: .3s ease;
+    transition: .3s ease;
     pointer-events: none;
 
     opacity: 0;
@@ -590,8 +590,8 @@ a:hover
     padding: 90px 46px;
 
     -webkit-transform: translate(-50%,-50%);
-        -ms-transform: translate(-50%,-50%);
-            transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
     text-align: center;
 
     opacity: 0;
@@ -607,8 +607,8 @@ a:hover
     top: 50%;
 
     -webkit-transition: .4s ease;
-         -o-transition: .4s ease;
-            transition: .4s ease;
+    -o-transition: .4s ease;
+    transition: .4s ease;
 
     opacity: 1;
 }
@@ -652,8 +652,8 @@ a:hover
 
     content: '';
     -webkit-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-            transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
 
     background: #fff;
 }
@@ -669,8 +669,8 @@ a:hover
 
     content: '';
     -webkit-transform: rotate(-45deg);
-        -ms-transform: rotate(-45deg);
-            transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
 
     background: #fff;
 }
@@ -734,7 +734,7 @@ a:hover
     outline: none !important;
     background: #fff;
     -webkit-box-shadow: none;
-            box-shadow: none;
+    box-shadow: none;
 }
 
 .popup .card .subscribe-form button
@@ -751,8 +751,8 @@ a:hover
     padding: 0;
 
     -webkit-transition: .1s ease;
-         -o-transition: .1s ease;
-            transition: .1s ease;
+    -o-transition: .1s ease;
+    transition: .1s ease;
     text-align: center;
     letter-spacing: .03em;
 
@@ -761,7 +761,7 @@ a:hover
     outline: none !important;
     background: #2707eb;
     -webkit-box-shadow: none !important;
-            box-shadow: none !important;
+    box-shadow: none !important;
 }
 
 .popup .card .subscribe-form button[disabled]
@@ -805,8 +805,8 @@ a:hover
     width: auto;
 
     -webkit-transform: translateX(-15px);
-        -ms-transform: translateX(-15px);
-            transform: translateX(-15px);
+    -ms-transform: translateX(-15px);
+    transform: translateX(-15px);
     text-align: center;
 
     opacity: 0;
@@ -816,8 +816,8 @@ a:hover
 .popup .card .subscribe-form button:hover i
 {
     -webkit-transform: translateX(0);
-        -ms-transform: translateX(0);
-            transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
 
     opacity: 1;
 }
@@ -848,8 +848,8 @@ a:hover
 .popup .card .subscribe-form.form-success .success-message
 {
     -webkit-transition: .3s ease;
-         -o-transition: .3s ease;
-            transition: .3s ease;
+    -o-transition: .3s ease;
+    transition: .3s ease;
 
     opacity: 1;
 }
@@ -857,9 +857,9 @@ a:hover
 .popup .card .subscribe-form.form-success .success-message
 {
     -webkit-animation-name: form_success_animation;
-            animation-name: form_success_animation;
+    animation-name: form_success_animation;
     -webkit-animation-duration: 1s;
-            animation-duration: 1s;
+    animation-duration: 1s;
 
     color: lawngreen;
 }
@@ -867,9 +867,9 @@ a:hover
 .popup .card .subscribe-form.form-error .error-message
 {
     -webkit-animation-name: form_error_animation;
-            animation-name: form_error_animation;
+    animation-name: form_error_animation;
     -webkit-animation-duration: 1s;
-            animation-duration: 1s;
+    animation-duration: 1s;
 
     color: red;
 }
@@ -879,19 +879,19 @@ a:hover
     from
     {
         -webkit-transform: scale3d(1, 1, 1);
-                transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
     }
 
     50%
     {
         -webkit-transform: scale3d(1.08, 1.08, 1.08);
-                transform: scale3d(1.08, 1.08, 1.08);
+        transform: scale3d(1.08, 1.08, 1.08);
     }
 
     to
     {
         -webkit-transform: scale3d(1, 1, 1);
-                transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
     }
 }
 
@@ -900,19 +900,19 @@ a:hover
     from
     {
         -webkit-transform: scale3d(1, 1, 1);
-                transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
     }
 
     50%
     {
         -webkit-transform: scale3d(1.08, 1.08, 1.08);
-                transform: scale3d(1.08, 1.08, 1.08);
+        transform: scale3d(1.08, 1.08, 1.08);
     }
 
     to
     {
         -webkit-transform: scale3d(1, 1, 1);
-                transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
     }
 }
 
@@ -921,43 +921,43 @@ a:hover
     from
     {
         -webkit-transform: none;
-                transform: none;
+        transform: none;
     }
 
     15%
     {
         -webkit-transform: translate3d(-10%, 0, 0) rotate3d(0, 0, 1, -5deg);
-                transform: translate3d(-10%, 0, 0) rotate3d(0, 0, 1, -5deg);
+        transform: translate3d(-10%, 0, 0) rotate3d(0, 0, 1, -5deg);
     }
 
     30%
     {
         -webkit-transform: translate3d(8%, 0, 0) rotate3d(0, 0, 1, 3deg);
-                transform: translate3d(8%, 0, 0) rotate3d(0, 0, 1, 3deg);
+        transform: translate3d(8%, 0, 0) rotate3d(0, 0, 1, 3deg);
     }
 
     45%
     {
         -webkit-transform: translate3d(-6%, 0, 0) rotate3d(0, 0, 1, -3deg);
-                transform: translate3d(-6%, 0, 0) rotate3d(0, 0, 1, -3deg);
+        transform: translate3d(-6%, 0, 0) rotate3d(0, 0, 1, -3deg);
     }
 
     60%
     {
         -webkit-transform: translate3d(4%, 0, 0) rotate3d(0, 0, 1, 2deg);
-                transform: translate3d(4%, 0, 0) rotate3d(0, 0, 1, 2deg);
+        transform: translate3d(4%, 0, 0) rotate3d(0, 0, 1, 2deg);
     }
 
     75%
     {
         -webkit-transform: translate3d(-2%, 0, 0) rotate3d(0, 0, 1, -1deg);
-                transform: translate3d(-2%, 0, 0) rotate3d(0, 0, 1, -1deg);
+        transform: translate3d(-2%, 0, 0) rotate3d(0, 0, 1, -1deg);
     }
 
     to
     {
         -webkit-transform: none;
-                transform: none;
+        transform: none;
     }
 }
 
@@ -966,43 +966,43 @@ a:hover
     from
     {
         -webkit-transform: none;
-                transform: none;
+        transform: none;
     }
 
     15%
     {
         -webkit-transform: translate3d(-10%, 0, 0) rotate3d(0, 0, 1, -5deg);
-                transform: translate3d(-10%, 0, 0) rotate3d(0, 0, 1, -5deg);
+        transform: translate3d(-10%, 0, 0) rotate3d(0, 0, 1, -5deg);
     }
 
     30%
     {
         -webkit-transform: translate3d(8%, 0, 0) rotate3d(0, 0, 1, 3deg);
-                transform: translate3d(8%, 0, 0) rotate3d(0, 0, 1, 3deg);
+        transform: translate3d(8%, 0, 0) rotate3d(0, 0, 1, 3deg);
     }
 
     45%
     {
         -webkit-transform: translate3d(-6%, 0, 0) rotate3d(0, 0, 1, -3deg);
-                transform: translate3d(-6%, 0, 0) rotate3d(0, 0, 1, -3deg);
+        transform: translate3d(-6%, 0, 0) rotate3d(0, 0, 1, -3deg);
     }
 
     60%
     {
         -webkit-transform: translate3d(4%, 0, 0) rotate3d(0, 0, 1, 2deg);
-                transform: translate3d(4%, 0, 0) rotate3d(0, 0, 1, 2deg);
+        transform: translate3d(4%, 0, 0) rotate3d(0, 0, 1, 2deg);
     }
 
     75%
     {
         -webkit-transform: translate3d(-2%, 0, 0) rotate3d(0, 0, 1, -1deg);
-                transform: translate3d(-2%, 0, 0) rotate3d(0, 0, 1, -1deg);
+        transform: translate3d(-2%, 0, 0) rotate3d(0, 0, 1, -1deg);
     }
 
     to
     {
         -webkit-transform: none;
-                transform: none;
+        transform: none;
     }
 }
 
@@ -1011,8 +1011,8 @@ a:hover
     .popup .card
     {
         -webkit-transform: translate(-50%,0%);
-            -ms-transform: translate(-50%,0%);
-                transform: translate(-50%,0%);
+        -ms-transform: translate(-50%,0%);
+        transform: translate(-50%,0%);
     }
 
     .popup.show .card
