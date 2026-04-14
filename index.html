@@ -22,23 +22,23 @@
     }
 
     :root {
-      --bg: #151210;
-      --bg-warm: #1a1714;
-      --bg-card: rgba(222, 184, 135, 0.02);
-      --bg-card-hover: rgba(222, 184, 135, 0.05);
-      --text-primary: #c4b9a8;
-      --text-secondary: #7d746a;
-      --text-heading: #ede6db;
-      --accent: #d4a574;
-      --accent-bright: #e8c49a;
-      --accent-dim: rgba(212, 165, 116, 0.12);
-      --accent-glow: rgba(212, 165, 116, 0.06);
-      --tag-bg: rgba(212, 165, 116, 0.08);
-      --tag-text: #c9a27a;
-      --tag-border: rgba(212, 165, 116, 0.15);
-      --border: rgba(212, 165, 116, 0.08);
-      --border-hover: rgba(212, 165, 116, 0.18);
-      --rule: rgba(212, 165, 116, 0.1);
+      --bg: #1a1f2e;
+      --bg-warm: #1e2436;
+      --bg-card: rgba(100, 180, 255, 0.02);
+      --bg-card-hover: rgba(100, 180, 255, 0.05);
+      --text-primary: #a8b4c8;
+      --text-secondary: #6a7590;
+      --text-heading: #dbe4f0;
+      --accent: #5cb8f5;
+      --accent-bright: #8ad0ff;
+      --accent-dim: rgba(92, 184, 245, 0.12);
+      --accent-glow: rgba(92, 184, 245, 0.06);
+      --tag-bg: rgba(92, 184, 245, 0.08);
+      --tag-text: #7ac4f7;
+      --tag-border: rgba(92, 184, 245, 0.15);
+      --border: rgba(92, 184, 245, 0.08);
+      --border-hover: rgba(92, 184, 245, 0.18);
+      --rule: rgba(92, 184, 245, 0.1);
       --font-display: 'Cormorant Garamond', Georgia, serif;
       --font-body: 'Outfit', system-ui, sans-serif;
       --font-mono: 'DM Mono', monospace;
@@ -254,12 +254,12 @@
       0%,
       100% {
         opacity: 1;
-        box-shadow: 0 0 0 0 rgba(212, 165, 116, 0.4);
+        box-shadow: 0 0 0 0 rgba(92, 184, 245, 0.4);
       }
 
       50% {
         opacity: 0.7;
-        box-shadow: 0 0 0 5px rgba(212, 165, 116, 0);
+        box-shadow: 0 0 0 5px rgba(92, 184, 245, 0);
       }
     }
 
@@ -708,7 +708,7 @@
         display: block;
         position: sticky;
         top: 0;
-        background: rgba(21, 18, 16, 0.88);
+        background: rgba(26, 31, 46, 0.88);
         backdrop-filter: blur(16px);
         -webkit-backdrop-filter: blur(16px);
         padding: 1.1rem 0;
@@ -1027,7 +1027,7 @@
     // ─── Mouse Spotlight ───
     const spotlight = document.getElementById('spotlight');
     document.addEventListener('mousemove', (e) => {
-      spotlight.style.background = `radial-gradient(650px circle at ${e.clientX}px ${e.clientY}px, rgba(212, 165, 116, 0.04), transparent 40%)`;
+      spotlight.style.background = `radial-gradient(650px circle at ${e.clientX}px ${e.clientY}px, rgba(92, 184, 245, 0.04), transparent 40%)`;
     });
 
     // ─── Active Nav on Scroll ───
