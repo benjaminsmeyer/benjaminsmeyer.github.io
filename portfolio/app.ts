@@ -130,6 +130,7 @@ const skills: SkillGroup[] = [
     label: 'Frameworks & AI',
     items: ['React', 'Redux', 'Node.js', 'Flask', 'ASP.NET Core', 'Tailwind CSS', 'FastAPI', 'REST APIs', 'Azure OpenAI', 'MCP'],
   },
+  { id: 'ai-tools', label: 'AI Dev Tools', items: ['Claude Code', 'Codex', 'GitHub Copilot'] },
   { id: 'databases', label: 'Data', items: ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'DynamoDB', 'Elasticsearch'] },
   {
     id: 'infrastructure',
