@@ -183,7 +183,6 @@ const links: Link[] = [
   { id: 'email', label: 'Email', detail: 'hello@bensmeyer.com', url: 'mailto:hello@bensmeyer.com', symbol: 'symbol:mail' },
   { id: 'linkedin', label: 'LinkedIn', detail: 'linkedin.com/in/benjaminsmeyer', url: 'https://linkedin.com/in/benjaminsmeyer', symbol: 'symbol:icon.linkedin' },
   { id: 'github', label: 'GitHub', detail: 'github.com/benjaminsmeyer', url: 'https://github.com/benjaminsmeyer', symbol: 'symbol:icon.github' },
-  { id: 'website', label: 'Website', detail: 'bensmeyer.com', url: 'https://bensmeyer.com', symbol: 'symbol:link' },
 ];
 
 const sources: Sources = {
