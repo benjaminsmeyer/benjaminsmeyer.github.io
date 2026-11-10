@@ -9,6 +9,7 @@ type Job = Result<'experience'>[number];
 type Project = Result<'projects'>[number];
 type SkillGroup = Result<'skills'>[number];
 type Link = Result<'links'>[number];
+type School = Result<'education'>;
 
 const profile: Profile = {
   name: 'Benjamin Meyer',
@@ -20,8 +21,17 @@ const profile: Profile = {
     "in Computer Science from Northeastern, and I'm happiest with a problem I haven't seen before. " +
     'Off the clock: movies, tennis, skiing, and planning the next trip.',
   location: 'Redmond, WA',
-  education: 'Northeastern University',
-  honors: 'B.S. Computer Science, Minor in Business Administration · 2026 · 3.92 GPA, Summa Cum Laude · TA for Fundamentals of CS I and II',
+};
+
+const education: School = {
+  school: 'Northeastern University',
+  degree: 'Bachelor of Science in Computer Science',
+  minor: 'Minor in Business Administration',
+  dates: 'Sep 2022 – May 2026',
+  place: 'Boston, MA',
+  url: 'https://www.northeastern.edu',
+  honors: ['Summa Cum Laude', 'GPA 3.92 / 4.00'],
+  coursework: ['Programming Languages', 'Computer Systems', 'Machine Learning', 'Large Language Models', 'Object-Oriented Design'],
 };
 
 const experience: Job[] = [
@@ -82,18 +92,21 @@ const experience: Job[] = [
     ],
     tags: ['Python', 'Splunk', 'CrowdStrike', 'Automation'],
   },
+  {
+    id: 'northeastern-ta',
+    company: 'Northeastern University',
+    role: 'Teaching Assistant',
+    dates: '2023 – 2024',
+    place: 'Boston, MA',
+    url: 'https://www.northeastern.edu',
+    points: [
+      'Fundamentals of Computer Science I (Fall 2023) and Fundamentals of Computer Science II (Spring 2024).',
+    ],
+    tags: [],
+  },
 ];
 
 const projects: Project[] = [
-  {
-    id: 'nlp-emotion',
-    name: 'NLP Emotion Analysis',
-    meta: '2026',
-    summary:
-      'Four emotion classifiers benchmarked on 20,000+ tweets, from Naive Bayes to fine-tuned DistilBERT, which reached 92% F1 across six emotions and beat the baselines by 15%+.',
-    tags: ['PyTorch', 'TensorFlow', 'Transformers'],
-    url: 'https://github.com/benjaminsmeyer/nlp-emotion-analysis',
-  },
   {
     id: 'pips-solver',
     name: 'NYTimes Pips AI Solver',
@@ -104,13 +117,22 @@ const projects: Project[] = [
     url: 'https://github.com/benjaminsmeyer/nytimes-pips-ai',
   },
   {
-    id: 'giveback',
-    name: 'GiveBack',
-    meta: 'TreeHacks 2023',
+    id: 'kambaz',
+    name: 'Kambaz',
+    meta: 'Learning management',
     summary:
-      'A donation platform that connects people with 100+ nonprofits, matching them to causes with NLP and tracking giving through leaderboards and personal views.',
-    tags: ['React', 'Python', 'FastAPI', 'spaCy'],
-    url: 'https://github.com/benjaminsmeyer/GiveBack',
+      'A full-stack learning management system in Next.js and MongoDB, with 50+ courses, assignment workflows and three user roles.',
+    tags: ['Next.js', 'TypeScript', 'MongoDB'],
+    url: 'https://github.com/benjaminsmeyer/kambaz-next-js',
+  },
+  {
+    id: 'nlp-emotion',
+    name: 'NLP Emotion Analysis',
+    meta: '2026',
+    summary:
+      'Four emotion classifiers benchmarked on 20,000+ tweets, from Naive Bayes to fine-tuned DistilBERT, which reached 92% F1 across six emotions and beat the baselines by 15%+.',
+    tags: ['PyTorch', 'TensorFlow', 'Transformers'],
+    url: 'https://github.com/benjaminsmeyer/nlp-emotion-analysis',
   },
   {
     id: 'visualag',
@@ -120,6 +142,24 @@ const projects: Project[] = [
       'A command-line tool that turns LeetCode runs into step-by-step visuals, so algorithm intuition comes from watching code execute, not from pass or fail.',
     tags: ['Rust', 'Python', 'CLI'],
     url: 'https://github.com/benjaminsmeyer/hackmit2023',
+  },
+  {
+    id: 'battlesalvo',
+    name: 'BattleSalvo',
+    meta: 'Strategy game',
+    summary:
+      'A battleship strategy game in Java with single-player and multiplayer modes: an AI opponent that places ships and picks its shots, and a real-time client-server socket layer.',
+    tags: ['Java', 'OOP', 'Sockets', 'Gradle'],
+    url: 'https://github.com/benjaminsmeyer/BattleSalvo',
+  },
+  {
+    id: 'giveback',
+    name: 'GiveBack',
+    meta: 'TreeHacks 2023',
+    summary:
+      'A donation platform that connects people with 100+ nonprofits, matching them to causes with NLP and tracking giving through leaderboards and personal views.',
+    tags: ['React', 'Python', 'FastAPI', 'spaCy'],
+    url: 'https://github.com/benjaminsmeyer/GiveBack',
   },
 ];
 
@@ -140,15 +180,16 @@ const skills: SkillGroup[] = [
 ];
 
 const links: Link[] = [
-  { id: 'email', label: 'Email', detail: 'bmeyerswe@gmail.com', url: 'mailto:bmeyerswe@gmail.com', symbol: 'symbol:mail' },
-  { id: 'linkedin', label: 'LinkedIn', detail: 'linkedin.com/in/benjaminsmeyer', url: 'https://linkedin.com/in/benjaminsmeyer', symbol: 'symbol:person' },
-  { id: 'github', label: 'GitHub', detail: 'github.com/benjaminsmeyer', url: 'https://github.com/benjaminsmeyer', symbol: 'symbol:link' },
+  { id: 'email', label: 'Email', detail: 'hello@bensmeyer.com', url: 'mailto:hello@bensmeyer.com', symbol: 'symbol:mail' },
+  { id: 'linkedin', label: 'LinkedIn', detail: 'linkedin.com/in/benjaminsmeyer', url: 'https://linkedin.com/in/benjaminsmeyer', symbol: 'symbol:icon.linkedin' },
+  { id: 'github', label: 'GitHub', detail: 'github.com/benjaminsmeyer', url: 'https://github.com/benjaminsmeyer', symbol: 'symbol:icon.github' },
   { id: 'website', label: 'Website', detail: 'bensmeyer.com', url: 'https://bensmeyer.com', symbol: 'symbol:link' },
 ];
 
 const sources: Sources = {
   profile: () => profile,
   experience: () => experience,
+  education: () => education,
   projects: () => projects,
   skills: () => skills,
   links: () => links,

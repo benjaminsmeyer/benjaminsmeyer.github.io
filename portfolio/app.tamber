@@ -3,3 +3,7 @@ tamber portfolio
 theme
   AccentColor = light-dark(#1769aa, #2f86c8)
   accent.text = light-dark(#1769aa, #5cb8f5)
+
+icons
+  icon.github = icon(sf "chevron.left.forwardslash.chevron.right", svg "icons/github.svg")
+  icon.linkedin = icon(sf "person.crop.square", svg "icons/linkedin.svg")

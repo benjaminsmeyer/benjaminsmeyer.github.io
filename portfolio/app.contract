@@ -11,8 +11,16 @@ shape Profile
   intro: string
   bio: string
   location: string
-  education: string
-  honors: string
+
+shape School
+  school: string
+  degree: string
+  minor: string
+  dates: string
+  place: string
+  url: string
+  honors: string[]
+  coursework: string[]
 
 shape Job
   id: string
@@ -66,6 +74,7 @@ style pill
 component Portfolio
   resource profile = profile() as shape Profile
   resource experience = experience() as shape Job[]
+  resource education = education() as shape School
   resource projects = projects() as shape Project[]
   resource skills = skills() as shape SkillGroup[]
   resource links = links() as shape Link[]
@@ -113,9 +122,32 @@ component Portfolio
                             row gap=10 align-items="flex-start"
                               text "•" class=body color="accent.text" aria-hidden=true
                               text p class=body flex=1 min-width=0
-                        row flex-wrap="wrap" gap=6 padding-top=4
-                          for t in j.tags key=t
-                            Chip(label=t)
+                        if j.tags.length > 0
+                          row flex-wrap="wrap" gap=6 padding-top=4
+                            for t in j.tags key=t
+                              Chip(label=t)
+
+                // Education: the same timeline row, with honours and coursework.
+                column id="education" gap=8 testId="education"
+                  SectionLabel(title="Education", tid="education-heading")
+                  row flex-wrap="wrap" column-gap=32 row-gap=6 padding="28px 0" border-bottom="1px solid -exact-separator"
+                    text education.dates class=meta flex="0 1 8rem" min-width=0 padding-top=3 testId="education-dates"
+                    column flex="1 1 20rem" min-width=0 gap=12
+                      column gap=2
+                        link href=education.url color="accent.text" font="-exact-headline" testId="education-link"
+                          text education.school testId="education-school"
+                        text education.degree font="-exact-subheadline" font-weight=500 testId="education-degree"
+                        text `${education.minor} · ${education.place}` font="-exact-subheadline" color="-exact-secondary-label" testId="education-minor"
+                      row flex-wrap="wrap" gap=8 testId="education-honors"
+                        for h in education.honors key=h
+                          row class=pill padding="4px 12px" gap=6
+                            view width=6 height=6 border-radius=3 background-color="AccentColor"
+                            text h font="-exact-footnote" font-weight=500
+                      column gap=8
+                        text "Relevant coursework" font="-exact-footnote" font-weight=600 color="-exact-secondary-label"
+                        row flex-wrap="wrap" gap=6 testId="education-coursework"
+                          for c in education.coursework key=c
+                            Chip(label=c)
 
                 // Projects: outlined cards, each one a link to its repository.
                 column id="projects" gap=24 testId="projects"
@@ -133,7 +165,7 @@ component Portfolio
                             Chip(label=t)
                         text "View on GitHub" font="-exact-subheadline" font-weight=500 color="accent.text" padding-top=4
 
-                // Skills: a label and its chips, row by row; education under them.
+                // Skills: a label and its chips, row by row.
                 column id="skills" gap=24 testId="skills"
                   SectionLabel(title="Skills", tid="skills-heading")
                   column gap=20
@@ -143,11 +175,6 @@ component Portfolio
                         row flex="1 1 20rem" min-width=0 flex-wrap="wrap" gap=6 testId=`skill-${s.id}`
                           for t in s.items key=t
                             Chip(label=t)
-                  row flex-wrap="wrap" column-gap=32 row-gap=4 padding-top=20 border-top="1px solid -exact-separator" testId="education"
-                    text "Education" font="-exact-subheadline" font-weight=600 flex="0 1 8rem" min-width=0
-                    column flex="1 1 20rem" min-width=0 gap=4
-                      text profile.education font="-exact-headline" testId="education-degree"
-                      text profile.honors class=body
 
                 // Contact: one call to action, then every way to reach me.
                 column id="contact" gap=24 testId="contact"
