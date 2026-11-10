@@ -104,13 +104,13 @@ const projects: Project[] = [
     url: 'https://github.com/benjaminsmeyer/nytimes-pips-ai',
   },
   {
-    id: 'kambaz',
-    name: 'Kambaz',
-    meta: 'Learning management',
+    id: 'giveback',
+    name: 'GiveBack',
+    meta: 'TreeHacks 2023',
     summary:
-      'A full-stack learning management system in Next.js and MongoDB, with 50+ courses, assignment workflows and three user roles.',
-    tags: ['Next.js', 'TypeScript', 'MongoDB'],
-    url: 'https://github.com/benjaminsmeyer/kambaz-next-js',
+      'A donation platform that connects people with 100+ nonprofits, matching them to causes with NLP and tracking giving through leaderboards and personal views.',
+    tags: ['React', 'Python', 'FastAPI', 'spaCy'],
+    url: 'https://github.com/benjaminsmeyer/GiveBack',
   },
   {
     id: 'visualag',
