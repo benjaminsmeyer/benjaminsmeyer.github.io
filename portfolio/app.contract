@@ -98,7 +98,7 @@ component Portfolio
                       text profile.title font="-exact-footnote" font-weight=500 testId="hero-title"
                   text profile.name role="heading" aria-level=1 font-size="3rem" font-weight=800
                     letter-spacing=-1.5 line-height=1.2 -exact-fit="shrink" testId="hero-name"
-                  text profile.intro font-size="1.375rem" font-weight=500 line-height=1.4 testId="hero-intro"
+                  text profile.intro font-size="1.375rem" font-weight=500 line-height=1.4 overflow-wrap="break-word" testId="hero-intro"
                   text profile.bio class=body testId="hero-bio"
                   row flex-wrap="wrap" gap=10 padding-top=8
                     for l in links key=l.id

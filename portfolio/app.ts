@@ -14,11 +14,11 @@ type School = Result<'education'>;
 const profile: Profile = {
   name: 'Benjamin Meyer',
   title: 'Software Engineer at Microsoft',
-  intro: 'Full-stack engineer building agentic AI products people use every day.',
+  intro: 'Building agentic AI products people use every day at Microsoft.',
   bio:
-    "I'm a software engineer in Redmond, building AI features end to end: TypeScript interfaces, " +
-    'C# services, LLM orchestration and the evaluations that keep them honest. I graduated summa cum laude ' +
-    "in Computer Science from Northeastern, and I'm happiest with a problem I haven't seen before. " +
+    "I'm a software engineer on the Apps and Agents team at Microsoft in Redmond, building AI features end to end: " +
+    'TypeScript interfaces, C# services, LLM orchestration and the evaluations that keep them honest. I graduated ' +
+    "summa cum laude in Computer Science from Northeastern, and I'm happiest with a problem I haven't seen before. " +
     'Off the clock: movies, tennis, skiing, and planning the next trip.',
   location: 'Redmond, WA',
 };
@@ -43,11 +43,11 @@ const experience: Job[] = [
     place: 'Redmond, WA',
     url: 'https://www.microsoft.com',
     points: [
-      'Shipped a full-stack agentic AI feature to production in under six weeks, owning the TypeScript UX, C# APIs, LLM orchestration and prompts.',
-      'Built MCP mail tools that let an AI agent work with email, taking it from chat into real workflows at scale.',
-      'Created a Python framework that evaluates 50,000+ multi-turn conversations across 150 industries, with two independent LLM judges to surface failures that averages hide.',
-      'Designed least-privilege APIs with server-side auth that keeps credentials out of the browser, released behind feature flags and automated tests.',
-      'Opened 1,000+ pull requests across 50 repos in 12 weeks by running parallel AI coding agents through CI/CD quality gates, and packaged reusable agent skills for the team.',
+      'Delivered a full-stack agentic AI feature to production in under 6 weeks, owning end-to-end development across TypeScript UX, C# backend APIs, LLM orchestration, and prompt engineering.',
+      'Built MCP mail tools that give an AI agent structured access to email, extending its capabilities beyond chat into real user workflows at scale.',
+      'Engineered a scalable multi-turn LLM evaluation framework in Python spanning 50,000+ conversations across 150 industry verticals, using LLM-as-a-judge scoring with dual independent judges to surface failure modes hidden by aggregate metrics.',
+      'Architected secure-by-design APIs with least-privilege access control and server-side authentication that keeps credentials out of the browser, de-risking production rollout through feature flags and automated testing.',
+      'Authored 1,000+ pull requests across 50 repositories in 12 weeks by orchestrating parallel AI coding agents with CI/CD quality gates for build, test, code review, and live testing; built reusable agent skills for team developer workflows.',
     ],
     tags: ['TypeScript', 'C#', 'Python', 'MCP', 'Azure OpenAI'],
   },
@@ -59,9 +59,9 @@ const experience: Job[] = [
     place: 'Redmond, WA',
     url: 'https://www.microsoft.com/en-us/copilot',
     points: [
-      'Designed and shipped meeting insights for Copilot for Sales: GPT-4 and Microsoft Graph write pre-meeting briefs right inside Outlook.',
-      'Built accessible, localized interfaces in React, TypeScript, Redux and Fluent UI on ASP.NET Core APIs, to WCAG standards.',
-      'Led the rollout to Azure Kubernetes Service with CI/CD pipelines in Azure DevOps.',
+      'Architected and shipped a meeting insights feature for Copilot for Sales, integrating GPT-4 and Microsoft Graph APIs to generate AI-powered meeting briefs directly within Outlook, eliminating pre-meeting research for sales teams.',
+      'Built accessible full-stack experiences with React, TypeScript, Redux, and Fluent UI backed by ASP.NET Core and C# APIs, supporting enterprise-grade localization and WCAG compliance.',
+      'Led cloud deployment to Azure Kubernetes Service (AKS) with CI/CD pipelines via Azure DevOps, ensuring high reliability, security, and maintainability at scale.',
     ],
     tags: ['React', 'TypeScript', 'C#', 'ASP.NET Core', 'Kubernetes'],
   },
@@ -73,9 +73,9 @@ const experience: Job[] = [
     place: 'Boston, MA',
     url: 'https://naralogics.com',
     points: [
-      'Built serverless Python and FastAPI services powering AI recommendations at 1,000+ requests a minute.',
-      'Ran AWS ETL pipelines (EMR, S3, Lambda) moving 100 GB+ a day for ML workloads.',
-      'Cut end-to-end processing time by 40% with Redis caching and parallelism.',
+      'Developed serverless APIs using Python and FastAPI, serving AI-driven recommendation systems at 1,000+ requests/min.',
+      'Deployed ETL pipelines on AWS (EMR, S3, Lambda) processing 100GB+ daily for ML workloads.',
+      'Introduced Redis caching layers and parallel processing optimizations that reduced end-to-end processing time by 40%.',
     ],
     tags: ['Python', 'FastAPI', 'AWS', 'Redis'],
   },
@@ -87,8 +87,8 @@ const experience: Job[] = [
     place: 'Boston, MA',
     url: 'https://www.harbourvest.com',
     points: [
-      'Automated incident triage across Splunk and CrowdStrike in Python, taking response time from 4 hours to 15 minutes and saving 300+ hours a year.',
-      'Matched 500M+ breached credentials against company accounts with graph traversal, triggering alerts and automatic password resets.',
+      'Built Python automation service integrating Splunk and CrowdStrike to triage and remediate security incidents, cutting response time from 4 hours to 15 minutes and saving 300+ hours of manual effort annually.',
+      'Designed graph traversal algorithms to cross-reference 500M+ compromised credentials from public breach data with company accounts, enabling proactive alerts and automated password reset workflows.',
     ],
     tags: ['Python', 'Splunk', 'CrowdStrike', 'Automation'],
   },
