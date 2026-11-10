@@ -1,0 +1,208 @@
+// Ben Meyer's portfolio: one screen of sections in a centred reading column.
+// The content lives in app.ts; this file is the view. The colours written are the accent
+// and its fill, in app.tamber; surfaces, rules and text are roles, so dark mode is the platform's.
+
+routes nav
+  home "/"
+
+shape Profile
+  name: string
+  title: string
+  intro: string
+  bio: string
+  location: string
+
+shape School
+  school: string
+  degree: string
+  minor: string
+  dates: string
+  place: string
+  url: string
+  honors: string[]
+  coursework: string[]
+
+shape Job
+  id: string
+  company: string
+  role: string
+  dates: string
+  place: string
+  url: string
+  points: string[]
+  tags: string[]
+
+shape Project
+  id: string
+  name: string
+  meta: string
+  summary: string
+  tags: string[]
+  url: string
+
+shape SkillGroup
+  id: string
+  label: string
+  items: string[]
+
+shape Link
+  id: string
+  label: string
+  detail: string
+  url: string
+  symbol: string
+
+style body
+  line-height=1.6
+  color="-exact-secondary-label"
+  overflow-wrap="break-word"
+
+style meta
+  font="-exact-footnote"
+  color="-exact-tertiary-label"
+  font-variant-numeric="tabular-nums"
+
+style pill
+  display="flex"
+  flex-direction="row"
+  align-items="center"
+  gap=8
+  padding="8px 14px"
+  border="1px solid -exact-separator"
+  border-radius=999
+
+component Portfolio
+  resource profile = profile() as shape Profile
+  resource experience = experience() as shape Job[]
+  resource education = education() as shape School
+  resource projects = projects() as shape Project[]
+  resource skills = skills() as shape SkillGroup[]
+  resource links = links() as shape Link[]
+
+  action follow(url: string)
+    nav = go(nav, url)
+
+  view
+    main testId="root" navigationKey=`${top(nav).id}` navigate=follow width="100%" height="100%"
+      for e in stack(nav) key=e.id
+        if e.name == "home"
+          column navigationKey=`${e.id}` navigationScroll="content" position="absolute" inset=0 display="flex" flex-direction="column"
+            scroll id="content" flex=1 min-height=0 testId="page"
+              column gap=88 padding="72px 24px 64px" max-width="44rem" margin-left="auto" margin-right="auto"
+
+                // Hero: a status pill, the name as the focal point, one line, then a short bio.
+                column gap=20 testId="hero"
+                  row
+                    row class=pill padding="6px 12px"
+                      view width=8 height=8 border-radius=4 background-color="AccentColor"
+                      text profile.title font="-exact-footnote" font-weight=500 testId="hero-title"
+                  text profile.name role="heading" aria-level=1 font-size="3rem" font-weight=800
+                    letter-spacing=-1.5 line-height=1.2 -exact-fit="shrink" testId="hero-name"
+                  text profile.intro font-size="1.375rem" font-weight=500 line-height=1.4 overflow-wrap="break-word" testId="hero-intro"
+                  text profile.bio class=body testId="hero-bio"
+                  row flex-wrap="wrap" gap=10 padding-top=8
+                    for l in links key=l.id
+                      link href=l.url class=pill testId=`hero-link-${l.id}`
+                        image l.symbol color="accent.text" aria-hidden=true
+                        text l.label font="-exact-subheadline" font-weight=500
+
+                // Experience: a timeline, the dates in their own column when there is room.
+                column id="experience" gap=8 testId="experience"
+                  SectionLabel(title="Experience", tid="experience-heading")
+                  for j in experience key=j.id
+                    row flex-wrap="wrap" column-gap=32 row-gap=6 padding="28px 0" border-bottom="1px solid -exact-separator" testId=`job-${j.id}`
+                      text j.dates class=meta flex="0 1 8rem" min-width=0 padding-top=3 testId=`job-${j.id}-dates`
+                      column flex="1 1 20rem" min-width=0 gap=10
+                        column gap=2
+                          text j.role font="-exact-headline" testId=`job-${j.id}-role`
+                          link href=j.url color="accent.text" font="-exact-subheadline" testId=`job-${j.id}-link`
+                            text `${j.company} · ${j.place}` testId=`job-${j.id}-company`
+                        column gap=8
+                          for p in j.points key=p
+                            row gap=10 align-items="flex-start"
+                              text "•" class=body color="accent.text" aria-hidden=true
+                              text p class=body flex=1 min-width=0
+                        if j.tags.length > 0
+                          row flex-wrap="wrap" gap=6 padding-top=4
+                            for t in j.tags key=t
+                              Chip(label=t)
+
+                // Education: the same timeline row, with honours and coursework.
+                column id="education" gap=8 testId="education"
+                  SectionLabel(title="Education", tid="education-heading")
+                  row flex-wrap="wrap" column-gap=32 row-gap=6 padding="28px 0" border-bottom="1px solid -exact-separator"
+                    text education.dates class=meta flex="0 1 8rem" min-width=0 padding-top=3 testId="education-dates"
+                    column flex="1 1 20rem" min-width=0 gap=12
+                      column gap=2
+                        link href=education.url color="accent.text" font="-exact-headline" testId="education-link"
+                          text education.school testId="education-school"
+                        text education.degree font="-exact-subheadline" font-weight=500 testId="education-degree"
+                        text `${education.minor} · ${education.place}` font="-exact-subheadline" color="-exact-secondary-label" testId="education-minor"
+                      row flex-wrap="wrap" gap=8 testId="education-honors"
+                        for h in education.honors key=h
+                          row class=pill padding="4px 12px" gap=6
+                            view width=6 height=6 border-radius=3 background-color="AccentColor"
+                            text h font="-exact-footnote" font-weight=500
+                      column gap=8
+                        text "Relevant coursework" font="-exact-footnote" font-weight=600 color="-exact-secondary-label"
+                        row flex-wrap="wrap" gap=6 testId="education-coursework"
+                          for c in education.coursework key=c
+                            Chip(label=c)
+
+                // Projects: outlined cards, each one a link to its repository.
+                column id="projects" gap=24 testId="projects"
+                  SectionLabel(title="Projects", tid="projects-heading")
+                  row flex-wrap="wrap" gap=16 align-items="stretch"
+                    for p in projects key=p.id
+                      link href=p.url flex="1 1 18rem" min-width=0 display="flex" flex-direction="column" gap=12
+                        padding=24 border="1px solid -exact-separator" border-radius=16 testId=`project-${p.id}-link`
+                        row align-items="baseline" gap=8 testId=`project-${p.id}`
+                          text p.name font="-exact-headline" flex=1 min-width=0 testId=`project-${p.id}-name`
+                          text p.meta class=meta
+                        text p.summary class=body flex=1
+                        row flex-wrap="wrap" gap=6
+                          for t in p.tags key=t
+                            Chip(label=t)
+                        text "View on GitHub" font="-exact-subheadline" font-weight=500 color="accent.text" padding-top=4
+
+                // Skills: a label and its chips, row by row.
+                column id="skills" gap=24 testId="skills"
+                  SectionLabel(title="Skills", tid="skills-heading")
+                  column gap=20
+                    for s in skills key=s.id
+                      row flex-wrap="wrap" column-gap=32 row-gap=8
+                        text s.label font="-exact-subheadline" font-weight=600 flex="0 1 8rem" min-width=0 padding-top=2 testId=`skill-${s.id}-label`
+                        row flex="1 1 20rem" min-width=0 flex-wrap="wrap" gap=6 testId=`skill-${s.id}`
+                          for t in s.items key=t
+                            Chip(label=t)
+
+                // Contact: one call to action, then every way to reach me.
+                column id="contact" gap=24 testId="contact"
+                  SectionLabel(title="Contact", tid="contact-heading")
+                  text "Let's build something." font-size="2rem" font-weight=700 letter-spacing=-0.8 line-height=1.2 testId="contact-cta"
+                  text "Always up for a conversation about engineering, AI tooling, or a good movie recommendation." class=body
+                  column gap=0
+                    for l in links key=l.id
+                      link href=l.url display="flex" flex-direction="row" flex-wrap="wrap" align-items="center" column-gap=16 row-gap=2
+                        padding="14px 0" border-bottom="1px solid -exact-separator" testId=`contact-${l.id}`
+                        text l.label font="-exact-subheadline" font-weight=600 color="-exact-label" flex="0 1 6rem" min-width=0
+                        text l.detail color="accent.text" flex=1 min-width=0 overflow-wrap="break-word" testId=`contact-${l.id}-text`
+                  text `© 2026 ${profile.name} · Built with Exact` class=meta text-align="center" padding-top=24 testId="footer"
+
+// A small uppercase label and a hairline: the section's title, quiet beside the content.
+component SectionLabel
+  props
+    title: string
+    tid: string
+  view
+    row align-items="center" gap=16
+      text title role="heading" aria-level=2 font="-exact-footnote" font-weight=600
+        text-transform="uppercase" letter-spacing=1.5 color="accent.text" testId=tid
+      view flex=1 height=1 background-color="-exact-separator"
+
+component Chip
+  props
+    label: string
+  view
+    text label font="-exact-caption1" font-weight=500 color="-exact-secondary-label"
+      background-color="-exact-tertiary-fill" padding="3px 10px" border-radius=999

@@ -1,0 +1,38 @@
+{
+  "$schema": "/tmp/claude-0/-home-user-benjaminsmeyer-github-io/dac710bc-e866-5ebe-b24c-bee6735db08a/scratchpad/exact-src/exact/scripts/app.schema.json",
+  "name": "Ben Meyer",
+  "short_name": "Ben Meyer",
+  "id": "com.bensmeyer.portfolio",
+  "start_url": "/",
+  "display": "standalone",
+  "app": {
+    "id": "com.bensmeyer.portfolio",
+    "name": "Ben Meyer"
+  },
+  "host": {
+    "web": {},
+    "linux": {},
+    "ios": {
+      "minimumOS": "17.0",
+      "deviceFamily": [
+        "iphone",
+        "ipad"
+      ]
+    },
+    "macos": {
+      "minimumOS": "14.0",
+      "window": {
+        "width": 900,
+        "height": 700
+      }
+    }
+  },
+  "deploy": {
+    "store": {
+      "web": "0",
+      "linux": "0",
+      "ios": "0",
+      "macos": "0"
+    }
+  }
+}
