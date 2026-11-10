@@ -110,7 +110,9 @@ component Portfolio
                             text `${j.company} · ${j.place}` testId=`job-${j.id}-company`
                         column gap=8
                           for p in j.points key=p
-                            text p class=body
+                            row gap=10 align-items="flex-start"
+                              text "•" class=body color="accent.text" aria-hidden=true
+                              text p class=body flex=1 min-width=0
                         row flex-wrap="wrap" gap=6 padding-top=4
                           for t in j.tags key=t
                             Chip(label=t)
